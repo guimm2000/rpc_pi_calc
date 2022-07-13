@@ -21,7 +21,11 @@ pi_prog_1(char *host, int passos)
 		exit (1);
 	}
 #endif	/* DEBUG */
-
+        
+        if(passos <= 0) {
+                printf("Digite um valor maior que 0\n");
+                exit(1);
+        }
 	pi_calc_1_arg.passos = passos;
 	result_1 = pi_calc_1(&pi_calc_1_arg, clnt);
 	if (result_1 == (double *) NULL) {
